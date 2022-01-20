@@ -159,4 +159,26 @@ install(
 )
 
 # packaging stuff
-include(CMakePackaging)
+#include(CMakePackaging)
+include(InstallRequiredSystemLibraries)
+set(CPACK_PACKAGE_NAME "libjson-rpc-cpp")
+set(CPACK_GENERATOR "DEB")
+set(CPACK_DISPLAY_NAME "libjson-rpc-cpp")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "libjson-rpc-cpp")
+set(CPACK_DEBIAN_PACKAGE_RELEASE "1")
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Alexander Pietsch <a.pietsch@consolinno.de>")
+#set(CPACK_DEBIAN_PACKAGE_DEPENDS "libhiredis-dev,libargtable2-dev,libcurl3-gnutls,libcurl4,rapidjson-dev,libjsoncpp-dev,libcurl4-openssl-dev,libmicrohttpd-dev")
+set(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE.txt")
+set(CPACK_PACKAGE_VERSION_MAJOR "${MAJOR_VERSION}")
+set(CPACK_PACKAGE_VERSION_MINOR "${MINOR_VERSION}")
+set(CPACK_PACKAGE_VERSION_PATCH "${PATCH_VERSION}")
+set(CPACK_DEBIAN_FILE_NAME DEB-DEFAULT)
+
+
+include(CPack)
+
+
+
+
+
